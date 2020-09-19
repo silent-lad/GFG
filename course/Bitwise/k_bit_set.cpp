@@ -18,4 +18,13 @@ int main()
     {
         cout << "no" << endl;
     }
+    //doubt
+    if (num & (1 << (k - 1)))
+    {
+        cout << "yes" << endl;
+    }
+    else
+    {
+        cout << "no" << endl;
+    }
 }
