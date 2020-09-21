@@ -13,10 +13,17 @@ int main()
     }
     cout << endl;
 
-    sort(arr, arr + 5, greater<int>);
+    sort(arr, arr + 5, greater<long long>());
     for (ll i = 0; i < 5; i++)
     {
         cout << arr[i] << " ";
     }
     cout << endl;
+
+    vector<int> v = {5, 7, 2, 9, 112};
+    sort(v.begin(), v.end());
+    for (auto i : v)
+    {
+        cout << i << " " << endl;
+    }
 }

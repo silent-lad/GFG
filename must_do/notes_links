@@ -4,7 +4,7 @@ https://practice.geeksforgeeks.org/problems/longest-consecutive-1s-1587115620/1/
 
 josephus
 
-max cicular subarray
+max circular subarray
 
 majority element
 
@@ -13,3 +13,7 @@ https://www.geeksforgeeks.org/maximum-occurred-integer-n-ranges/
 index of first/last/number of occur in sorted
 
 peak element binary search
+
+count inversions in array (merge)  res+= n1-i
+
+3 way partition
