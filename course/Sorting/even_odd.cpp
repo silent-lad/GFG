@@ -20,7 +20,7 @@ void partition(ll arr[], ll n)
 
 ll lomuto(ll arr[], ll l, ll h)
 {
-    ll inter = -1;
+    ll inter = l - 1;
     //pivot is last element
     for (ll i = 0; i < h - 1; i++)
     {
@@ -29,8 +29,13 @@ ll lomuto(ll arr[], ll l, ll h)
             inter++;
             swap(arr[i], arr[inter]);
         }
+        for (ll i = 0; i < h; i++)
+        {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
     }
-    swap(arr[inter + 1], arr[h]);
+    swap(arr[inter + 1], arr[h - 1]);
     return inter + 1;
 }
 
@@ -41,11 +46,11 @@ int main()
     ll arr[n];
     for (ll i = 0; i < n; i++)
     {
-        cin >> arr[n];
+        cin >> arr[i];
     }
     lomuto(arr, 0, n);
     for (ll i = 0; i < n; i++)
     {
-        cout << arr[n] << " ";
+        cout << arr[i] << " ";
     }
 }

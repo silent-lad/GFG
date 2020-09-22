@@ -17,3 +17,5 @@ peak element binary search
 count inversions in array (merge)  res+= n1-i
 
 3 way partition
+
+cycle sort - least swaps
