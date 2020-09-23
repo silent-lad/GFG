@@ -31,3 +31,9 @@ n/k occurence efficient solution no idea
  anagram search
 
  lexicographic rank
+
+ reverse linked list recursively
+
+//todo floydd loop detection (fast,slow) and removal also ((IMPORTANNNTTTTT))
+
+LRU Cache design DLL and Map<value,node>
