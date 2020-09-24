@@ -37,3 +37,7 @@ n/k occurence efficient solution no idea
 //todo floydd loop detection (fast,slow) and removal also ((IMPORTANNNTTTTT))
 
 LRU Cache design DLL and Map<value,node>
+
+K stacks in an array
+
+largest histogram area with stack // VARIATION // largest rectangle with all 1s

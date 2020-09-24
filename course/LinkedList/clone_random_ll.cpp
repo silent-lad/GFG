@@ -49,7 +49,6 @@ int main()
     second->next = third;
     third->next = fourth;
 
-    head = reverse(head);
     Node *temp = head;
     while (temp->next != NULL)
     {
