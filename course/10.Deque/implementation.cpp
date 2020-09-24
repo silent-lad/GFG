@@ -15,6 +15,12 @@ int main()
     dq.push_back(13);
     dq.push_back(14);
 
+    dq.insert(dq.begin(), 56);
+
+    dq.pop_front();
+    dq.pop_back();
+    dq.erase(dq.front());
+
     for (auto x : dq)
     {
         cout << x << endl;
