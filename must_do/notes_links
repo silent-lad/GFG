@@ -45,3 +45,7 @@ largest histogram area with stack // VARIATION // largest rectangle with all 1
 max element in all subarrays of size k (dq) [if el>dq_el remove dq_el ,store index]
 
 First circular tour (IMPORTANNNTTTTT)
+
+Burn binary tree
+
+serialize deserialize array

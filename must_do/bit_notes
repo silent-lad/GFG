@@ -1,0 +1,40 @@
+Problem 3: Given a number N, the task is to find the XOR of all numbers from 1 to N
+
+Solution:
+Find the remainder of N by moduling it with 4.
+If rem = 0, then xor will be same as N.
+If rem = 1, then xor will be 1.
+If rem = 2, then xor will be N+1.
+If rem = 3 ,then xor will be 0.
+
+
+using namespace std;
+
+bool res = false;
+
+bool compare(tnode* s, tnode* t){
+    if(s==NULL&&t==NULL)
+        return true;
+    if((s==NULL||t==NULL)||s->value!=t->value)
+        return false;
+    return compare(s->left,t->left)&&compare(s->right,t->right);
+}
+
+int isSubTree(tnode* s, tnode* t)
+{
+//   if(!s && !t) return 1;
+   if(!s) return -1;
+   
+   if(s->value==t->value){
+       if(!res){
+           res=compare(s,t);
+       }
+   }
+   isSubTree(s->left,t);
+   isSubTree(s->right,t);
+   if(res){
+       return 1;
+   }else{
+       return -1;
+   }
+}
