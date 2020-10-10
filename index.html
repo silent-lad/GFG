@@ -1,0 +1,65 @@
+<!--Here is a snippet of html form in WP template-->
+<form
+  action="http://demo.ohmyproperty.com/properties/"
+  id="realteo-search-form"
+  method="GET"
+>
+  <p>Selected: <strong id="single-country-address-value">none</strong></p>
+  <div class="search-form-_property_type col-md-3">
+    <select
+      name="_property_type"
+      id="_property_type"
+      data-placeholder=""
+      class="chosen-select"
+    >
+      <option value=""></option>
+      <option value="new-homes">New Homes</option>
+      <option value="rent">Rent</option>
+      <option value="share">Share</option>
+      <option value="buy" selected>Buy</option>
+    </select>
+  </div>
+
+  <input
+    type="search"
+    id="single-country-search"
+    class="form-control"
+    placeholder="Search City or Suburb test version"
+  />
+  <!-- <button>Search</button> -->
+  <!--other form elements here-->
+</form>
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+<!--Javascript code taken from API https://community.algolia.com/places/examples.html#searching-in-a-country -->
+<script type="text/javascript">
+  (function () {
+    var placesAutocomplete = places({
+      appId: "plS639VB4PRB",
+      apiKey: "c2711965f39afea7e38dfaadec272792",
+      container: document.querySelector("#single-country-search"),
+    }).configure({
+      countries: ["gh"],
+    });
+
+    var $address = document.querySelector("#single-country-address-value");
+    placesAutocomplete.on("change", function (e) {
+      var searchTerm = e.suggestion.name;
+      var searchType = document.getElementById("_property_type").value;
+      console.log(searchTerm, searchType);
+      var url = `http://demo.ohmyproperty.com/properties/?realteo_order=featured&keyword_search=${searchTerm}&_property_type=${searchType}&_offer_type=&tax-region=&_bedrooms=&_bathrooms=&_area_min=0&_area_max=1000&_price_min=1&_price_max=5564045`;
+      console.log(url);
+      window.location.href = url;
+
+      $address.textContent = e.suggestion.value;
+    });
+
+    placesAutocomplete.on("clear", function () {
+      $address.textContent = "none";
+    });
+
+    var $country = document.querySelector("#country-selector");
+    // $country.addEventListener("change", function (e) {
+    placesAutocomplete.configure({ countries: ["gh"] });
+    // });
+  })();
+</script>
